@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Idades</title>
+</head>
+<style>
+    body{
+        background-color: #cd608b;
+    }
+    h1{
+        text-align: center;
+        font-size: 50px;
+        font-family: "Times New Roman", serif;
+    }
+    table,th,td{
+        border: 1px solid black;
+        border-collapse: collapse;
+        background-color: #e3c2cf;
+    }
+    img{
+        width:200 px;
+        height: 120px;  
+        margin-left: auto;
+        margin-right: auto;
+        left: 0;
+        right: 0;
+
+    }
+    td,th{
+       text-align: center;
+    }
+
+</style>
+
+<body>
+    <h1>Descubra a sua faixa etária:</h1>
+    <form>
+        <br><input type="number" id="idadeusuario" >
+        <input type="button" id="retribuirfaixa" value="Faixa etária" onclick="faixa()"></br>
+        <p>Faixa etária:<label id="faixa"></label></p>
+    </form>
+
+    <table class="tabela" style="width:70%; margin-left: auto; margin-right: auto;left: 0; right: 0; margin-top: 30px;">
+        <tr>
+            <th>Idades</th>
+            <th>Faixa etária</th>
+            <th>Imagens</th>
+        </tr>
+        <tr>
+            <td>0-2</td>
+            <td id="bebe">bebé</td>
+            <td><img src="imagens/bebe1.jpg" ></td>
+        </tr>
+        <tr>
+            <td>2-12</td>
+            <td id="crianca">criança</td>
+            <td><img src="imagens/crianças.jpg"></td>
+        </tr>
+        <tr>
+            <td>12-16</td>
+            <td id="adolescente">adolescente</td>
+            <td><img src="imagens/adolescente.jpg"></td>
+        </tr>
+        <tr>
+            <td>16-18</td>
+            <td id="jovemadulto">jovem adulto</td>
+            <td><img src="imagens/jovemadolescente.jpg"></td>
+        </tr>
+        <tr>
+            <td>18-50</td>
+            <td id="adulto">adulto</td>
+            <td><img src="imagens/adultos1.jpg"></td>
+        </tr>
+        <tr>
+            <td>50-65</td>
+            <td id="meiaidade">adulto de meia idade</td>
+            <td><img src="imagens/meiaidade.jpg"></td>
+        </tr>
+        <tr>
+            <td>65-99</td>
+            <td id="idoso">idoso</td>
+            <td><img src="imagens/idoso.jpg"></td>
+        </tr>
+        <tr>
+            <td>100-129</td>
+            <td id="lendário">lendário</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>>130</td>
+            <td id="imortal">imortal</td>
+            <td></td>
+        </tr>
+    </table>
+
+    <script>
+        function faixa(){
+            var input , faixaetaria, bebe, crianca, adolescente, jovemadolescente, adulto, meiaidade, idoso, lendário, imortal,
+
+            input= parseInt(document.getElementById("idadeusuario").value);
+            faixaetaria = document.getElementById("faixa").textContent;
+            bebe = document.getElementById("bebe").textContent;
+            crianca = document.getElementById("crianca").textContent;
+            adolescente = document.getElementById("adolescente").textContent;
+            jovemadolescente= document.getElementById("jovemadulto").textContent;
+            adulto = document.getElementById("adulto").textContent;
+            meiaidade =document.getElementById("meiaidade").textContent;
+            idoso =document.getElementById("idoso").textContent;
+            lendário =document.getElementById("lendário").textContent;
+            imortal = document.getElementById("imortal").textContent;
+
+
+            if(input<0){
+                alert("Insira um valor válido.")
+            }
+            else if(input>=0 && input<=2){
+                document.getElementById("faixa").textContent = bebe;
+            }
+            else if(input>=3 && input<=12){
+                document.getElementById("faixa").textContent = crianca;
+            }
+            else if(input>=13 && input<=16){
+                document.getElementById("faixa").textContent = adolescente;
+            }
+            else if(input>=17 && input<=18){
+                document.getElementById("faixa").textContent = jovemadolescente;
+            }
+            else if(input>=19 && input<=50){
+                document.getElementById("faixa").textContent = adulto;
+            }
+            else if(input>=51 && input<=65){
+                document.getElementById("faixa").textContent = meiaidade;
+            }
+            else if(input>=66 && input<=100){
+                document.getElementById("faixa").textContent = idoso;
+            }
+            else if(input>100 && input<=130){
+                document.getElementById("faixa").textContent = lendário;
+            }
+            else if(input>130){
+                document.getElementById("faixa").textContent = imortal;
+            }
+        }
+    </script>
+
+
+
+</body>
+</html>
